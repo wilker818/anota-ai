@@ -1,0 +1,28 @@
+<div class="aai-home-card">
+  <button
+    type="button"
+    class="aai-home-card__btn-delete"
+    (click)="handleDeleteItem(item)"
+  >
+    <img
+      ngSrc="../../../../assets/icons/close.svg"
+      alt="icon-search"
+      height="24"
+      width="24"
+    />
+  </button>
+  <div class="aai-home-card__view">
+    <img
+      [src]="item.img"
+      [alt]="item.title"
+      class="aai-home-card__view-image"
+    />
+    <div class="aai-home-card__view-tag" [attr.typeTag]="item.type">
+      {{ item.type }}
+    </div>
+  </div>
+  <div class="aai-home-card__content">
+    <h1 class="aai-home-card__content-title">{{ item.title }}</h1>
+    <p class="aai-home-card__content-description">{{ item.description }}</p>
+  </div>
+</div>

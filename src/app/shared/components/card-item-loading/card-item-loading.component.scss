@@ -1,0 +1,106 @@
+@import "../../../../style/mixins/breakpoints";
+@import "../../../../style/mixins/variables";
+
+.aai-home-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 400px;
+
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 1px 10px -5px black;
+
+  margin-bottom: 32px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+
+  @include for-tablet-landscape-only {
+    -webkit-transition: initial;
+    transition: initial;
+  }
+
+  &:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
+    @include for-tablet-landscape-only {
+      -webkit-transform: initial;
+      transform: initial;
+    }
+  }
+
+  &__view {
+    position: relative;
+
+    margin-bottom: 16px;
+
+    &-image {
+      border-radius: 8px 8px 0 0;
+      width: 100%;
+      border: 1px solid rgba(13, 164, 198, 0.5);
+      height: 170px;
+    }
+
+    &-tag {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+
+      max-width: 64px;
+      width: 100%;
+      height: 22px;
+      border: 1px solid rgba(13, 164, 198, 0.5);
+      border-radius: 4px;
+
+      padding: 12px 4px;
+    }
+  }
+
+  &__content {
+    padding: 0 8px;
+
+    &-title {
+      max-width: 80px;
+      width: 100%;
+      height: 38px;
+      border: 1px solid rgba(13, 164, 198, 0.5);
+      margin-bottom: 12px;
+    }
+
+    &-description {
+      width: 100%;
+      height: 100px;
+      border: 1px solid rgba(13, 164, 198, 0.5);
+
+      padding: 0 8px;
+    }
+  }
+  .aai-gradient__load {
+    animation-duration: 1.4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: cardItemLoader;
+    animation-timing-function: linear;
+    background: linear-gradient(
+      90deg,
+      rgba(13, 164, 198, 0.1) -24.18%,
+      rgba(16, 191, 230, 0.25) 50.26%,
+      rgba(13, 164, 198, 0.1) 114.84%
+    );
+    background-size: 1000px 640px;
+
+    @keyframes cardItemLoader {
+      0% {
+        background-position: -468px 0;
+      }
+
+      100% {
+        background-position: 468px 0;
+      }
+    }
+  }
+}

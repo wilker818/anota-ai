@@ -1,0 +1,16 @@
+<nav class="aai-nav">
+  <div class="aai-nav__box">
+    <input
+      class="aai-nav__box-search"
+      type="text"
+      [(ngModel)]="searchInput"
+      (keydown.enter)="handleSearchItem(searchInput)"
+    />
+    <button
+      class="aai-nav__box-btn-search"
+      (click)="handleSearchItem(searchInput)"
+    >
+      <img ngSrc="./assets/icons/search.svg" alt="icon-search" height="24" width="24">
+    </button>
+  </div>
+</nav>
